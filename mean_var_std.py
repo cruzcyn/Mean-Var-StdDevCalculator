@@ -11,7 +11,6 @@ def calculate(list):
     else:
         a = np.array(list)
         a = np.reshape(a, (3,3))
-        print(a)
 
         # calculations = {
         #     "mean": [axis1, axis2, flattened],
@@ -19,10 +18,13 @@ def calculate(list):
         #     "standard deviation": [axis1, axis2, flattened],
         #     "max": [axis1, axis2, flattened],
         #     "min": [axis1, axis2, flattened],
-        #     "sum": [axis1, axis2, flattened],
+        #     "sum": [np.sum(a, axis=0), np.sum(a, axis=1), np.sum(a)],
         # }
         # return calculations
 
-test_list = (1, 2, 3, 4, 5, 6, 7, 8, 9)
+        axis1_sum = np.sum(a)
+        print(axis1_sum)
+
+test_list = (0, 1, 2, 3, 4, 5, 6, 7, 8)
 
 calculate(test_list)
