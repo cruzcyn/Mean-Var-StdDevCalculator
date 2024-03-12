@@ -13,8 +13,8 @@ def calculate(list):
         a = np.reshape(a, (3,3))
 
         # calculations = {
-        #     "mean": [axis1, axis2, flattened],
-        #     "variance": [axis1, axis2, flattened],
+        #     "mean": [np.mean(a, axis=0), np.mean(a, axis=1), np.mean(a)],
+        #     "variance": [np.var(a, axis=0), np.var(a, axis=1), np.var(a)],
         #     "standard deviation": [axis1, axis2, flattened],
         #     "max": [axis1, axis2, flattened],
         #     "min": [axis1, axis2, flattened],
@@ -22,8 +22,8 @@ def calculate(list):
         # }
         # return calculations
 
-        mean_calc = [np.mean(a, axis=0), np.mean(a, axis=1), np.mean(a)]
-        print(mean_calc)
+        var_calc = [np.var(a, axis=0), np.var(a, axis=1), np.var(a)]
+        print(var_calc)
 
 test_list = (0, 1, 2, 3, 4, 5, 6, 7, 8)
 
