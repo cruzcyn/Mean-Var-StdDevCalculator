@@ -1,6 +1,10 @@
 import numpy as np
 
 def calculate(list):
+    """Takes a list of 9 int, turns it into a 3x3 numpy array and calculates the mean, variance, standard
+    deviation, max, min and sum of the rows, columns and the flattened matrix. Returns a dictionary with lists
+    of all the results."""
+
     if len(list) < 9:
         raise ValueError("List must contain nine numbers.")
     else:
@@ -24,8 +28,3 @@ def calculate(list):
         }
 
         return calculations
-
-test_list = (0, 1, 2, 3, 4, 5, 6, 7, 8)
-
-results = calculate(test_list)
-print(results)
