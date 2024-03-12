@@ -1,7 +1,7 @@
 import numpy as np
 
 # TODO the input of the func should be a list containing 9 digits
-# TODO the func should return a dict containing mean, variance, standard deviation, 
+# TODO the func should return a dict containing, 
 #      max, min, and along both axes and for the flattened matrix
 # TODO the values in the returned dictionary should be lists and not Numpy arrays.
 
@@ -12,19 +12,18 @@ def calculate(list):
         a = np.array(list)
         a = np.reshape(a, (3,3))
 
-        # calculations = {
-        #     "mean": [np.mean(a, axis=0), np.mean(a, axis=1), np.mean(a)],
-        #     "variance": [np.var(a, axis=0), np.var(a, axis=1), np.var(a)],
-        #     "standard deviation": [axis1, axis2, flattened],
-        #     "max": [axis1, axis2, flattened],
-        #     "min": [axis1, axis2, flattened],
-        #     "sum": [np.sum(a, axis=0), np.sum(a, axis=1), np.sum(a)],
-        # }
-        # return calculations
+        calculations = {
+            "mean": [np.mean(a, axis=0), np.mean(a, axis=1), np.mean(a)],
+            "variance": [np.var(a, axis=0), np.var(a, axis=1), np.var(a)],
+            "standard deviation": [np.std(a, axis=0), np.std(a, axis=1), np.std(a)],
+            "max": [np.max(a, axis=0), np.max(a, axis=1), np.max(a)],
+            "min": [np.min(a, axis=0), np.min(a, axis=1), np.min(a)],
+            "sum": [np.sum(a, axis=0), np.sum(a, axis=1), np.sum(a)],
+        }
 
-        var_calc = [np.var(a, axis=0), np.var(a, axis=1), np.var(a)]
-        print(var_calc)
+        return calculations
 
 test_list = (0, 1, 2, 3, 4, 5, 6, 7, 8)
 
-calculate(test_list)
+results = calculate(test_list)
+print(results)
