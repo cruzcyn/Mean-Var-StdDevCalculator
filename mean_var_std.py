@@ -12,8 +12,10 @@ def calculate(list):
         a = np.array(list)
         a = np.reshape(a, (3,3))
 
+        mean_calcs = [np.mean(a, axis=0), np.mean(a, axis=1), np.mean(a)]
+
         calculations = {
-            "mean": [np.mean(a, axis=0), np.mean(a, axis=1), np.mean(a)],
+            "mean": [result.tolist() for result in mean_calcs],
             "variance": [np.var(a, axis=0), np.var(a, axis=1), np.var(a)],
             "standard deviation": [np.std(a, axis=0), np.std(a, axis=1), np.std(a)],
             "max": [np.max(a, axis=0), np.max(a, axis=1), np.max(a)],
